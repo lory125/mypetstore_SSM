@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <link rel="StyleSheet" href="../css/jpetstore.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/searchProduct.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/cartChange.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/mouseEventInform.css" type="text/css" media="screen" />
+</head>
+<body>
+<div th:replace="common/IncludeTop"></div>
+
+<div id="Content">
+    <div id="BackLink">
+        <a href="Product.html">Return
+            to Product</a>
+    </div>
+<div id="Catalog">
+
+    <table>
+        <tr>
+            <td id="description"></td>
+        </tr>
+        <tr>
+            <td th:text="${item.itemId}"><b> ${sessionScope.item.itemId} </b></td>
+        </tr>
+        <tr>
+            <td th:text="${item.attribute1} + ${item.attribute2} + ${item.attribute3} +
+                    ${item.attribute4} + ${item.attribute5}"><b> </b></td>
+        </tr>
+        <tr>
+            <td th:text="${product.name}">${sessionScope.product.name}</td>
+        </tr>
+
+
+        <tr>
+            <td th:if="${item.quantity}<=0" th:text="Back ordered">Back ordered</td>
+            <td th:if="${item.quantity}>0" th:text="${item.quantity}+ ' in stock ' "  >in stock</td>
+        </tr>
+<!--        <tr>-->
+<!--            <td><c:if test="${sessionScope.item.quantity <= 0}">-->
+<!--                Back ordered.-->
+<!--            </c:if> <c:if test="${sessionScope.item.quantity > 0}">-->
+<!--                ${sessionScope.item.quantity} in stock.-->
+<!--            </c:if></td>-->
+<!--        </tr>-->
+        <tr>
+            <td th:text="'$' + ${item.listPrice}"></td>
+<!--            <td>-->
+<!--                <fmt:formatNumber value="${sessionScope.item.listPrice}"-->
+<!--                                  pattern="$#,##0.00" />-->
+<!--            </td>-->
+        </tr>
+
+<!--        <tr>-->
+<!--            <td>-->
+<!--                <a class="Button" href="addItemToCart?workingItemId=${item.itemId}">Add to Cart</a>-->
+<!--            </td>-->
+<!--        </tr>-->
+    </table>
+
+</div>
+
+</div>
+<div th:replace="common/IncludeBottom"></div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <link rel="StyleSheet" href="../css/jpetstore.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/searchProduct.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/cartChange.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/mouseEventInform.css" type="text/css" media="screen" />
+</head>
+<body>
+<div th:replace="common/IncludeTop"></div>
+
+<div id="Content">
+    <script src="../js/pics.js"></script>
+    <th:if test="${sessionScope.messageSignOn != null}">
+        <ul class="messages">
+            <li></li>
+        </ul>
+    </th:if>
+
+    <div id="Catalog">
+        <form action="/account/login" method="post">
+            <p>Please enter your username and password.</p>
+            <p>
+                Username:<input type="text" name="username" value="j2ee"/><br />
+                Password:<input type="password" name="password" value="123456"/><br />
+<!--                VerificationCode:<input type="text" name="vCode" size="5" maxlength="4"/>-->
+<!--                <a href="signOn"><img border="0" src="verificationCode" name="checkcode"></a>-->
+            </p>
+            <input type="submit" name="/account/login" value="Login" />
+        </form>
+        Need a user name and password?
+        <!--newAccountForm-->
+        <a href="/account/newAccountForm">Register Now!</a>
+    </div>
+
+</div>
+<div th:replace="common/IncludeBottom"></div>
+
+</body>
+</html>

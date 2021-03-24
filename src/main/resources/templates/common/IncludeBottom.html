@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="StyleSheet" href="../css/jpetstore.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/searchProduct.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/cartChange.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/mouseEventInform.css" type="text/css" media="screen" />
+</head>
+<body>
+    <footer th:fragment="footer">
+        <div id="footer">
+            <div id="PoweredBy">&nbsp<a href="www.csu.edu.cn">www.csu.edu.cn</a>
+            </div>
+            <!--列出用户喜欢的标题-->
+            <div id="Banner">
+                <tr th:text="account.bannername"></tr>
+<!--            <div id="Banner">-->
+<!--                <c:if test="${sessionScope.account.bannerOption} != null">-->
+<!--                    ${sessionScope.account.bannername}-->
+<!--                </c:if>-->
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

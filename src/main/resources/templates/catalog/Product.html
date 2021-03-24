@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <link rel="StyleSheet" href="../css/jpetstore.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/searchProduct.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/cartChange.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/mouseEventInform.css" type="text/css" media="screen" />
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../js/pics.js"></script>
+</head>
+<body>
+<div th:replace="common/IncludeTop"></div>
+<div id="Content">
+    <div id="BackLink">
+        <a th:href="@{/catalog/viewCategory(categoryId=${product.categoryId})}"
+           th:text="'Return to '+ ${product.categoryId}"></a>
+    </div>
+
+    <div id="Catalog">
+
+        <h2 th:text="${product.name}">product的name</h2>
+
+        <table>
+            <tr>
+                <th>Item ID</th>
+                <th>Product ID</th>
+                <th>Description</th>
+                <th>List Price</th>
+                <th>&nbsp;</th>
+            </tr>
+
+            <tr th:each="item:${itemList}">
+                <td>
+                    <a th:href="@{/catalog/viewItem(itemId=${item.itemId})}" th:text="${item.itemId}"></a>
+                </td>
+                <td th:text="${product.productId}"></td>
+                <td th:text="${item.attribute1} + ${item.attribute2} + ${item.attribute3} +
+                    ${item.attribute4} + ${item.attribute5}"></td>
+                <td th:text="'$' + ${item.listPrice}"></td>
+<!--                <td>-->
+<!--                    <a class="Button" th:href="@{/cart/addItem(itemId=${item.itemId})}">Add to Cart</a>-->
+<!--                </td>-->
+            </tr>
+<!--            <c:forEach var="item" items="${sessionScope.itemList}">-->
+<!--                <tr>-->
+<!--                    <td>-->
+<!--                        <a href="viewItem?itemId=${item.itemId}">${item.itemId}</a>-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        ${item.product.productId}-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        ${item.attribute1}-->
+<!--                        ${item.attribute2}-->
+<!--                        ${item.attribute3}-->
+<!--                        ${item.attribute4}-->
+<!--                        ${item.attribute5}-->
+<!--                        ${sessionScope.product.name}-->
+<!--                    </td>-->
+<!--                    <td>-->
+<!--                        <fmt:formatNumber value="${item.listPrice}"-->
+<!--                                          pattern="$#,##0.00" /></td>-->
+<!--                    <td>-->
+<!--                        <a class="Button" href="addItemToCart?workingItemId=${item.itemId}">Add to Cart</a>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--            </c:forEach>-->
+            <tr>
+                <td>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</div>
+<div th:replace="common/IncludeBottom"></div>
+</body>
+</html>

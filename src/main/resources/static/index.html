@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MyPetStore</title>
+    <link rel="StyleSheet" href="css/stylesheet.css" type="text/css" media="screen"/>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+        }
+        nav {
+            width: 1400px;
+            height: 200px;
+            border: 1px solid red;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        ul {
+            width: 200%;
+            height: 100%;
+            animation: picmove 5s linear infinite forwards;
+        }
+        @keyframes picmove {
+            from {
+                transform: translate(0);
+            }
+            to {
+                transform: translate(-1400px);
+            }
+        }
+        img {
+            width: 350px;
+            height: 200px;
+            float: left;
+        }
+        ul:hover {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+
+<body>
+<nav>
+    <ul>
+        <li><img src="images/bird1.gif" alt=""></li>
+        <li><img src="images/dog1.gif" alt=""></li>
+        <li><img src="images/cat1.gif" alt=""></li>
+        <li><img src="images/fish1.gif" alt=""></li>
+        <li><img src="images/bird1.gif" alt=""></li>
+        <li><img src="images/dog1.gif" alt=""></li>
+        <li><img src="images/cat1.gif" alt=""></li>
+        <li><img src="images/fish1.gif" alt=""></li>
+    </ul>
+</nav>
+<br/>
+<br/>
+<br/>
+<div id="Content">
+
+    <h2>Welcome to MyPetStore</h2>
+    <br/>
+    <br/>
+    <script src="/js/Greeting.js"></script>
+    <p><a href="/catalog/view">Enter the Store</a></p>
+    <br/>
+    <br/>
+
+    <p><sub>Copyright www.csu.edu.cn </sub></p>
+
+</div>
+</body>
+</html>

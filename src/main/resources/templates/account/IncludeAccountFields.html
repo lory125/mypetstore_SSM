@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" xmlns:>
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <link rel="StyleSheet" href="../css/jpetstore.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/searchProduct.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/cartChange.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/mouseEventInform.css" type="text/css" media="screen" />
+</head>
+<body>
+
+<div id="Content">
+    <script src="../js/pics.js"></script>
+    <form action="/account/login" method="post">
+        <p>Account Information</p>
+        <p>
+            First name:<input type="text" name="account.firstName" value=" "/><br />
+            Last name:<input type="text" name="account.lastName" value=""/><br />
+            Email:<input type="text" name="account.email" value=""/><br />
+            Phone:<input type="text" name="account.phone" value=""/><br />
+            Address 1:<input type="text" name="account.address1" value=""/><br />
+            Address 2:<input type="text" name="account.address2" value=""/><br />
+            City:<input type="text" name="account.city" value=""/><br />
+            State:<input type="text" name="account.state" value=""/><br />
+            Zip:<input type="text" name="account.zip" value=""/><br />
+            Country:<input type="text" name="account.country" value=""/><br />
+
+        </p>
+        <p>Profile Information</p>
+        <p>Language Preference:</p>
+        <p>Favourite Category:</p>
+        <p>Enable MyList</p>
+        <p>Enable MyBanner</p>
+    </form>
+
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <td>Language Preference:</td>-->
+<!--            <td><th:select name="account.languagePreference">-->
+<!--                <th:options-collection collection="${actionBean.languages}" />-->
+<!--            </th:select></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Favourite Category:</td>-->
+<!--            <td><th:select name="account.favouriteCategoryId">-->
+<!--                <th:options-collection collection="${actionBean.categories}" />-->
+<!--            </th:select></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Enable MyList</td>-->
+<!--            <td><th:checkbox name="account.listOption" /></td>-->
+<!--        </tr>-->
+<!--        <tr>-->
+<!--            <td>Enable MyBanner</td>-->
+<!--            <td><th:checkbox name="account.bannerOption" /></td>-->
+<!--        </tr>-->
+
+<!--    </table>-->
+
+</div>
+
+
+</body>
+</html>

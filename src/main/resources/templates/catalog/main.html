@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <link rel="StyleSheet" href="../css/jpetstore.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/searchProduct.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/cartChange.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/mouseEventInform.css" type="text/css" media="screen" />
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" th:src="@{/js/pics.js}"></script>
+</head>
+<body>
+<div th:replace="common/IncludeTop"></div>
+<div id="Content">
+
+    <div id="Welcome">
+        <div id="WelcomeContent" align="center" >
+            Welcome to MyPetStore!
+        </div>
+    </div>
+    <div class="triangle"></div>
+    <div style="z-index: -5;">
+        <table align="left" >
+            <tr >
+                <th rowspan="5" width="75">&nbsp;</th>
+                <th width="150" height="150"><a href="/catalog/viewCategory?categoryId=CATS"><img src="../images/cat_s.gif"
+                                                                                                  alt="CATS" onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/></a></th>
+                <th width="15" rowspan="5"></th>
+                <td width="300" ><a href="/catalog/viewCategory?categoryId=CATS">&NoBreak;<div class="triangle" align="center"></div>CATS</a></td>
+                <th width="300" rowspan="5">&nbsp;</th>
+                <th rowspan="5" width="15" >&nbsp;</th>
+                <th rowspan="5" width="1100">
+                    <div class="banner">
+                        <a href="/catalog/viewCategory?categoryId=CATS">
+                            <img src="../images/cat_a.gif">
+                        </a>
+
+                        <ul>
+                            <li><a th:href="@{../images/cat_a.gif}">1</a></li>
+                            <li><a th:href="@{../images/dog_a.gif}">2</a></li>
+                            <li><a th:href="@{../images/fish_a.gif}">3</a></li>
+                            <li><a th:href="@{../images/bird_a.gif}">4</a></li>
+                        </ul>
+                    </div>
+                </th>
+            </tr>
+             <script type="text/javascript" th:src="@{/js/mouseEvent.js}"></script>
+            <tr >
+                <td width="150" height="150"><a href="/catalog/viewCategory?categoryId=DOGS"><img src="../images/dog_s.gif"
+                                                                                                  alt="DOGS" onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/></a></td>
+                <td width="300"><a href="/catalog/viewCategory?categoryId=DOGS">&NoBreak;<div class="triangle" align="center"></div>DOGS</a></td>
+            </tr>
+
+            <tr>
+                <td width="150" height="150"><a href="/catalog/viewCategory?categoryId=BIRDS"><img src="../images/bird_s.gif"
+                                                                                                   alt="BIRDS" onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/></a></td>
+                <td width="300"><a href="/catalog/viewCategory?categoryId=BIRDS">&NoBreak;<div class="triangle" align="center"></div>BIRDS</a></td>
+            </tr>
+
+            <tr>
+                <td width="150" height="150"><a href="/catalog/viewCategory?categoryId=FISH"><img src="../images/fish_s.gif"
+                                                                                                  alt="FISH" onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/></a></td>
+                <td width="300"><a href="/catalog/viewCategory?categoryId=FISH">&NoBreak;<div class="triangle" align="center"></div>FISH</a></td>
+            </tr>
+
+            <tr>
+                <td width="150" height="150"><a href="/catalog/viewCategory?categoryId=REPTILES"><img src="../images/reptiles_s.gif"
+                                                                                                      alt="REPTILES" onmouseover="showInform(alt);" onmouseout="hiddenInform(event)"/></a></td>
+                <td width="300"><a href="/catalog/viewCategory?categoryId=REPTILES">&NoBreak;<div class="triangle" align="center"></div>REPTILES</a></td>
+            </tr>
+
+        </table>
+    </div>
+
+    <div id="inform" style="display: none">sssssssssss</div>
+
+    <div id="Separator">&nbsp;</div>
+</div>
+<div th:replace="common/IncludeBottom"></div>
+
+</body>
+</html>

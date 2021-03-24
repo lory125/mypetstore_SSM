@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" xmlns:>
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <link rel="StyleSheet" href="../css/jpetstore.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/searchProduct.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/cartChange.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/mouseEventInform.css" type="text/css" media="screen" />
+</head>
+<body>
+<div th:replace="common/IncludeTop"></div>
+<div id="Content">
+    <script src="../js/pics.js"></script>
+
+    <div id="Catalog">
+        <form action="/account/login" method="post">
+            <p>User Information</p>
+            <p>
+                Username:<input type="text" name="username" value=" "/><br />
+                Password:<input type="password" name="password" value=""/><br />
+                Repeat password:<input type="password" name="repeatedPassword" value=""/><br />
+
+
+            </p>
+            <div th:replace="account/IncludeAccountFields"></div>
+            <input type="submit" name="/account/login" value="Login" />
+        </form>
+
+   </div>
+
+</div>
+<div th:replace="common/IncludeBottom"></div>
+
+</body>
+</html>

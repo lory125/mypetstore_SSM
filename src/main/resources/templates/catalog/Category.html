@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <link rel="StyleSheet" href="../css/jpetstore.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/searchProduct.css" type="text/css" media="screen" />
+    <link rel="StyleSheet" href="../css/cartChange.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../css/mouseEventInform.css" type="text/css" media="screen" />
+</head>
+<body>
+<div th:replace="common/IncludeTop"></div>
+
+<div id="Content">
+    <div id="BackLink">
+        <a href="main">Return to Main Menu</a>
+    </div>
+
+    <div id="Catalog">
+
+        <h2 th:text="${category.name}">Category的name属性</h2>
+
+        <table>
+            <tr>
+                <th>Product ID</th>
+                <th>Name</th>
+            </tr>
+
+            <tr th:each="product:${productList}">
+                <td>
+                    <a th:href="@{/catalog/viewProduct(productId=${product.productId})}"  th:text="${product.productId}">productId</a>
+                </td>
+                <td th:text="${product.name}">product Name</td>
+            </tr>
+
+            <!--        <c:th:each var="product" items="${sessionScope.productList}">-->
+            <!--            <tr>-->
+            <!--                <td>-->
+            <!--                    <a href="viewProduct?productId=${product.productId}">${product.productId}</a>-->
+            <!--                </td>-->
+            <!--                <td>-->
+            <!--                    ${product.name}-->
+            <!--                </td>-->
+            <!--            </tr>-->
+            <!--        </c:th:each>-->
+        </table>
+
+    </div>
+</div>
+<div th:replace="common/IncludeBottom"></div>
+
+
+</body>
+</html>
